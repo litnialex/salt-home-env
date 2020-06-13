@@ -1,0 +1,11 @@
+# Minion config for salt-call command invoked from the directory containing this file.
+id: local
+file_client: local
+root_dir: .
+pki_dir: pki/minion
+file_roots:
+  base:
+    - roots
+pillar_roots:
+  base:
+    - pillar

@@ -1,0 +1,9 @@
+# Master config for salt-ssh command invoked from the directory containing this file.
+root_dir: .
+pki_dir: pki/master
+file_roots:
+  base:
+    - roots
+pillar_roots:
+  base:
+    - pillar

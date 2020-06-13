@@ -1,0 +1,4 @@
+salt-call:
+  config_dir: .
+salt-ssh:
+  config_dir: .

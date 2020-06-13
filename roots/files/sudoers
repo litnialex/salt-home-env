@@ -1,0 +1,2 @@
+Defaults:{{ user }} env_keep += "XAUTHORITY DISPLAY SSH_AUTH_SOCK EDITOR PS1 PS2 HOME"
+{{ user }} ALL=(ALL:ALL) NOPASSWD:ALL
