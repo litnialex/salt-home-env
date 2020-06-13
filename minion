@@ -1,9 +1,5 @@
 # Minion config for salt-call command invoked from the directory containing this file.
-
-# minion_id is used as username. Because of simplicity to change it with:
-# salt-call --id <name> state.apply
-
-id: alex
+id: noname
 file_client: local
 root_dir: .
 pki_dir: pki/minion

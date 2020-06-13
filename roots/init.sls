@@ -1,4 +1,4 @@
-{% set user = salt['pillar.get']('user', grains.id) %}
+{% set user = salt['pillar.get']('user', 'alex') %}
 {% set home = salt['pillar.get']('home', '/home/' ~ user) %}
 {% set keypath = salt['pillar.get']('keypath', home ~ '/.ssh/authorized_keys') %}
 
