@@ -21,13 +21,12 @@ home-env-configs:
       - {{ home }}/.tmux.conf:
         - source: salt://files/.tmux.conf
     - user: {{ user }}
-    - group: {{ user }}
     - template: jinja
 
-home-env-editor:
+home-env-bashrc:
   file.append:
-    - name: /home/{{ user }}/.bashrc
-    - text: "export EDITOR=vim"
+    - name: {{ home }}/.bashrc
+    - text: "export EDITOR=vim\nexport LANG=C.UTF-8"
 
 home-env-sudoers:
   file.managed:
