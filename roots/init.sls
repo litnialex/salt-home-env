@@ -25,7 +25,6 @@ home-env-files:
     - file_mode: 600
     - makedirs: True
     - user: {{ user }}
-    - group: {{ user }}
     - template: jinja
     - context:
         username: {{ username }}
