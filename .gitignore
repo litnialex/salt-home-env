@@ -2,6 +2,9 @@
 *.log
 .*.swp
 *~
+minion.d/
+master.d/
+etc/
 var/
-pki/
 roster
+pillar/

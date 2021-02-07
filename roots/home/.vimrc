@@ -13,6 +13,7 @@ syntax on
 "set formatoptions=ro
 set mouse-=a
 set confirm
+set colorcolumn=88
 
 "NETRW management
 let g:netrw_liststyle = 3 "3: tree style listing
@@ -24,5 +25,3 @@ let g:netrw_fastbrowse = 0
 let g:netrw_list_hide='.*\.swp$'
 "let g:netrw_altv = 0 "0: open at left 1: open at right (with 'v')
 "let g:netrw_alto = 1 "0: open at top; 1: open at bottom (with 'o')" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
-
-

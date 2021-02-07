@@ -1,38 +1,47 @@
-{% set user = salt['pillar.get']('user', 'alex') %}
+{% set user = pillar.get('user') %}
 {% set home = salt['pillar.get']('home', '/home/' ~ user) %}
-{% set keypath = salt['pillar.get']('keypath', home ~ '/.ssh/authorized_keys') %}
+{% set username = pillar.get('username') %}
+{% set email = pillar.get('email') %}
+
+home-install-pkgs:
+  pkg.installed:
+    - pkgs:
+      - sudo
+      - vim
+      - tmux
 
 home-env-user:
   user.present:
     - name: {{ user }}
+    - usergroup: True
     - shell: /bin/bash
     - groups:
       - sudo
 
-home-env-configs:
-  file.managed:
-    - names:
-      - {{ keypath }}:
-        - source: salt://files/authorized_keys
-        - mode: 600
-        - makedirs: True
-      - {{ home }}/.vimrc:
-        - source: salt://files/.vimrc
-      - {{ home }}/.tmux.conf:
-        - source: salt://files/.tmux.conf
+home-env-files:
+  file.recurse:
+    - name: {{ home }}
+    - source: salt://home
+    - file_mode: 600
+    - makedirs: True
     - user: {{ user }}
     - group: {{ user }}
     - template: jinja
+    - context:
+        username: {{ username }}
+        email: {{ email }}
 
-home-env-editor:
+home-env-env:
   file.append:
-    - name: /home/{{ user }}/.bashrc
-    - text: "export EDITOR=vim"
+    - name: {{ home }}/.bashrc
+    - text: |
+        export EDITOR=vim
+        export LANG=en_US.utf8
 
 home-env-sudoers:
   file.managed:
     - name: /etc/sudoers.d/{{ user }}
-    - source: salt://files/sudoers
+    - source: salt://sudoers
     - mode: 440
     - template: jinja
     - context:

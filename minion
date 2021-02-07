@@ -1,11 +1,13 @@
-# Minion config for salt-call command invoked from the directory containing this file.
+# This file is used by salt-call and salt-minion commands
+# when invoked from the directory containing this file.
+
 id: noname
-file_client: local
 root_dir: .
-pki_dir: pki/minion
+
+# used when running: salt-call --local
 file_roots:
-  base:
+ base:
     - roots
 pillar_roots:
-  base:
+  __env__:
     - pillar

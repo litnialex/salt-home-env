@@ -1,9 +1,12 @@
 # Master config for salt-ssh command invoked from the directory containing this file.
 root_dir: .
-pki_dir: pki/master
+#roster: sshconfig
+state_events: True
+
+# paths must be absolute: https://github.com/saltstack/salt/issues/14613
 file_roots:
   base:
-    - roots
+    - /home/alex/Dev/salt-home-env/roots
 pillar_roots:
-  base:
-    - pillar
+  __env__:
+    - /home/alex/Dev/salt-home-env/pillar
