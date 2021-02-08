@@ -1,5 +1,7 @@
 # salt-home-env
-A saltstack formula for home environment configuration. Creates a user and uploads personal confgs for vim, tmux, git. Creates sudo config for the user.
+A saltstack formula for user's home environment configuration. 
+Creates a user and uploads personal confgs for vim, tmux, git. 
+Creates sudo config for the user.
 
 ## use cases
 
