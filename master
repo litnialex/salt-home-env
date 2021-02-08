@@ -6,7 +6,7 @@ state_events: True
 # paths must be absolute: https://github.com/saltstack/salt/issues/14613
 file_roots:
   base:
-    - /home/alex/Dev/salt-home-env/roots
+    - /home/alex/Dev/salt-home-env/home-env
 pillar_roots:
   __env__:
     - /home/alex/Dev/salt-home-env/pillar

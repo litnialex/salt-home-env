@@ -7,7 +7,7 @@ root_dir: .
 # used when running: salt-call --local
 file_roots:
   base:
-    - roots
+    - home-env
 pillar_roots:
   __env__:
     - pillar
